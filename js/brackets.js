@@ -149,6 +149,7 @@ function onPlayerClicked(player){
 
 function removePlayer(id, round){
 	var rounds = tournamentStatus["rounds"].length;
+	var playersForNextRound = new Array();
 	for(var i=round; i<rounds; i++){
 		var games = tournamentStatus["rounds"][i].length;
 		for(var j=0; j<games; j++){
@@ -156,8 +157,24 @@ function removePlayer(id, round){
 			for(var k=0; k<game.length; k++){
 				if(game[k]["id"]==id){
 					tournamentStatus["rounds"][i][j][k] = {"id":-1, "name":"tbd", "order":0};
+				}else if(game[k]["id"]!=-1){
+					playersForNextRound[playersForNextRound.length] = tournamentStatus["rounds"][i][j][k];
 				}
 			}
+		}
+	}
+	
+	var participants = 0;
+	var games = tournamentStatus["rounds"][round].length;
+	for(var i=0; i<games; i++){
+		for(var j=0; j<tournamentStatus["rounds"][round][i].length; j++){
+			if(participants<playersForNextRound.length){
+				var player = playersForNextRound[participants];
+			}else{
+				var player = {"id":-1, "name":"tbd", "order":0}; 
+			}
+			tournamentStatus["rounds"][round][i][j]=player;
+			participants++;
 		}
 	}
 }

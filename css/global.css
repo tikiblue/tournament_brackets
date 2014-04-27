@@ -7,6 +7,10 @@ body{
 	background-attachment:fixed;
 }
 
+img{
+	border-radius: 8px;
+}
+
 .minimize{
 	background: #eee;
 	border: 1px solid #aaa;
@@ -68,7 +72,6 @@ body{
 	display: inline-block;
 	width: 24px;
 	height: 24px;
-	background-color: #bbb;
 	vertical-align: middle;
 }
 
