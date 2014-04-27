@@ -6,7 +6,25 @@ $(function(){
 	$(document).on("click","#brackets .round .game .player", function(){
 		onPlayerClicked(this);
 	});
+	$(document).on({
+	    mouseenter: function () {
+	        highlightPlayer($(this).attr("num"));
+	    },
+	    mouseleave: function () {
+	        unhighlightPlayers();
+	    }
+	}, "#brackets .game .player");
 });
+
+function highlightPlayer(num){
+    unhighlightPlayers();
+    if(num==-1)return;
+    $("#brackets .game .player.player-"+num).addClass("highlighted");
+}
+
+function unhighlightPlayers(){
+	$("#brackets .game .player").removeClass("highlighted");
+}
 
 function resetBrackets(players){
 	var games = Math.ceil(players.length/game.opponents);
@@ -97,7 +115,7 @@ function createGame(game){
 			var bgcolor = colors[pId%colors.length];
 			var name = players[pId].name;
 		}
-		var $player = $('<div class="player" order="'+player["order"]+'" num="'+pId+'" id="player-'+pId+'"><img src="img/user.png" style="background-color:'+bgcolor+'"></img><div class="name">'+name+'</div></div>');
+		var $player = $('<div class="player player-'+pId+'" order="'+player["order"]+'" num="'+pId+'"><img src="img/user.png" style="background-color:'+bgcolor+'"></img><div class="name">'+name+'</div></div>');
 		if(player["won"]){
 			$player.addClass("won");
 		}

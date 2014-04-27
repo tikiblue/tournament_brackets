@@ -16,6 +16,14 @@ $(function(){
 		minimizePlayers();
 		minimizeGame();
 	})
+	$(document).on({
+	    mouseenter: function () {
+	        highlightPlayer($(this).attr("num"));
+	    },
+	    mouseleave: function () {
+	        unhighlightPlayers();
+	    }
+	}, "#participantlist .participant");
 });
 
 function updatePlayers(){

@@ -1,18 +1,17 @@
 game = {
 	opponents : 2,
-	winners : 1
+	winners : 1,
+	image : "default"
 }
 
 $(function(){
 	$("#opponentsinput").change(function(){
 		game.opponents = parseInt($(this).val());
-		localStorage.setItem("game", JSON.stringify(game));
-		$brackets.html("");
+		updateGame();
 	});
 	$("#winnersinput").change(function(){
 		game.winners = parseInt($(this).val());
-		localStorage.setItem("game", JSON.stringify(game));
-		$brackets.html("");
+		updateGame();
 	});
 
 	var gameString = localStorage.getItem("game");
@@ -36,4 +35,21 @@ $(function(){
 		resetBrackets(players);
 	}
 
+	$("#game #gamecontent #gamebackground option").attr("selected", "");
+	$("#game #gamecontent #gamebackground option[value="+game.image+"]").attr("selected", "selected");
+
 });
+
+function updateBackgroundImage(){
+	var url = "img/games/"+game.image+".jpg";
+	$("body").css("background-image",url);
+}
+
+function updateGame(){
+	if(game.winners >= game.opponents){
+		game.winners = game.opponents-1;
+		$("#winnersinput").val(game.winners);
+	}
+	localStorage.setItem("game", JSON.stringify(game));
+	$brackets.html("");
+}

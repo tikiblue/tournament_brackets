@@ -7,13 +7,21 @@
 	<body>
 		<div id="game">
 			<div id="gamecontent">
-				<div id="opponents">
-					Participants in each Game:<br/>
-					<input id="opponentsinput" type="number" value="2"></input>
+				<div id="gamesettings">
+					<div id="opponents">
+						Participants in each Game:<br/>
+						<input id="opponentsinput" type="number" min="2" value="2"></input>
+					</div>
+					<div id="winners">
+						Number of winners per game:<br/>
+						<input id="winnersinput" type="number" min="1" value="1"></input>
+					</div>
 				</div>
-				<div id="winners">
-					Number of winners per game:<br/>
-					<input id="winnersinput" type="number" value="1"></input>
+				<div id="gamebackground">
+					Background-Image:<br/>
+					<select>
+						<option value="default">default</option>
+					</select>
 				</div>
 			</div>
 			<div id="minimizegame" class="minimize">

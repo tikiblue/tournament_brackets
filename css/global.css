@@ -2,8 +2,8 @@ body{
 	padding: 0;
 	margin: 0;
 	font-family: Helvetica;
-	background: url('../img/background.jpg');
-	background-size: 100%;
+	background: url('../img/games/default.jpg');
+	background-size: 150%;
 }
 
 .minimize{
@@ -90,6 +90,15 @@ body{
 #game #gamecontent #opponents{
 	margin-top: 16px;
 }
+#game #gamecontent #gamesettings{
+	display: inline-block;
+	vertical-align: middle;
+}
+#game #gamecontent #gamebackground{
+	margin-left: 32px;
+	display: inline-block;
+	vertical-align: middle;
+}
 #game #minimizegame{
 	height: 10px;
 	text-align: center;
@@ -122,6 +131,7 @@ body{
 	cursor: pointer;
 	color: white;
 	text-align: left;
+	min-width: 196px;
 }
 
 #brackets .round .game .player .name{
@@ -134,6 +144,11 @@ body{
 	background-color: #222;
 	color: white;
 	font-weight: bolder;
+}
+
+#brackets .round .game .player.highlighted{
+	background-color: rgba(255,255,255,.75);
+	color: black;
 }
 
 #brackets .round .game .player img{
