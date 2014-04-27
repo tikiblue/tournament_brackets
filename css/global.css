@@ -1,0 +1,140 @@
+body{
+	padding: 0;
+	margin: 0;
+	font-family: Helvetica;
+	background: url('../img/background.jpg');
+	background-size: 100%;
+}
+
+.minimize{
+	background: #eee;
+	border: 1px solid #aaa;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.minimize .grabber{
+	width: 30px;
+	height: 30px;
+	background: url('../img/dot.png');
+	display: inline-block;
+	opacity: .5;
+}
+
+#players{
+	height: 100%;
+	position: fixed;
+	background: white;
+	display: inline-block;
+}
+
+#playercontent{
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: top;
+}
+
+#playercontent #participants{
+	width: 256px;
+	padding: 15px;
+	display: inline-block;
+}
+
+#playercontent #participants #scrollcontainer{
+	overflow-y: auto;
+	height: 85%;
+}
+
+#playercontent #participantlist{
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+}
+
+#playercontent #participantlist .participant{
+	margin-left: 12px;
+	margin-bottom: 6px;
+	margin-top: 6px;
+}
+
+#playercontent #participantlist .participant .participantname{
+	display: inline-block;
+	vertical-align: middle;
+	width: 80%;
+}
+
+#playercontent #participantlist .participant .icon{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background-color: #bbb;
+	vertical-align: middle;
+}
+
+#players #minimizeplayers{
+	height: 100%;
+	width: 10px;
+	display: inline-block;
+	padding-top: 240px;
+}
+#game{
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	background: white;
+}
+#game #gamecontent{
+	height: 128px;
+	overflow: hidden;
+}
+#game #minimizegame{
+	height: 10px;
+	text-align: center;
+	width: 100%;
+}
+#brackets{
+	width: 100%;
+	padding: 32px;
+	text-align: center;
+}
+
+#brackets .round{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#brackets .round .game{
+	display: block;
+	margin: 15px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	overflow: hidden;
+	background: rgba(255,255,255,.2);
+}
+
+#brackets .round .game .player{
+	display: block;
+	vertical-align: middle;
+	padding: 12px;
+	cursor: pointer;
+	color: white;
+}
+
+#brackets .round .game .player .name{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 12px;
+}
+
+#brackets .round .game .player.won{
+	background-color: #222;
+	color: white;
+	font-weight: bolder;
+}
+
+#brackets .round .game .player img{
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	vertical-align: middle;
+}
