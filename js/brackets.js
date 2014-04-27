@@ -75,6 +75,7 @@ function updateBrackets(){
 	for(var i=0; i<tournamentStatus["rounds"].length; i++){
 		showRound(tournamentStatus["rounds"][i], i);
 	}
+	localStorage.setItem("brackets",JSON.stringify(tournamentStatus));
 }
 
 function showRound(round, num){

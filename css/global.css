@@ -87,6 +87,9 @@ body{
 	height: 128px;
 	overflow: hidden;
 }
+#game #gamecontent #opponents{
+	margin-top: 16px;
+}
 #game #minimizegame{
 	height: 10px;
 	text-align: center;
