@@ -33,7 +33,7 @@ function resetBrackets(players){
 		tournamentStatus["rounds"][0][gamenum] = currentGame;
 	}
 	var i = 0;
-	while(tournamentStatus["rounds"][i].length>game.winners){
+	while(tournamentStatus["rounds"][i].length*game.winners>game.winners){
 		var players = tournamentStatus["rounds"][i].length;
 		var nextPlayers = 0;
 		for(j in tournamentStatus["rounds"][i]){
