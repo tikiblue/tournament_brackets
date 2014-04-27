@@ -190,4 +190,13 @@ function addPlayer(id, round, order){
 function playerWon(id){
 	if(id<0||id>=players.length)return;
 	console.log(players[id], "WON!!!");
+	var $won = $('<div id="won"></div>');
+	var $img = $('<img src="img/won.png"></img>');
+	var $text = $('<div id="winnertext">'+players[id]["name"]+'<br/>wins!!!</div>');
+	$won.append($img);
+	$won.append($text);
+	$("body").append($won);
+	$won.click(function(){
+		$won.remove();
+	});
 }

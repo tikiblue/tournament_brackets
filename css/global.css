@@ -118,6 +118,7 @@ body{
 	padding: 12px;
 	cursor: pointer;
 	color: white;
+	text-align: left;
 }
 
 #brackets .round .game .player .name{
@@ -137,4 +138,36 @@ body{
 	height: 24px;
 	display: inline-block;
 	vertical-align: middle;
+}
+
+#won{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+	text-align: center;
+}
+
+#won img{
+	position: fixed;
+	top: 128px;
+	width: 320px;
+	margin-left: -160px;
+	left: 50%;
+}
+
+#won #winnertext{
+	position: fixed;
+	top: 296px;
+	color: white;
+	font-weight: bolder;
+	width: 256px;
+	margin-left: -134px;
+	left: 50%;
+	background: rgba(0,0,0,.5);
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
