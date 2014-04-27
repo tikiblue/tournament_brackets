@@ -35,14 +35,23 @@ $(function(){
 		resetBrackets(players);
 	}
 
+	$("#game #gamecontent #gamebackground select").change(function(){
+		game.image = $(this).val();
+		updateBackgroundImage();
+	});
+
 	$("#game #gamecontent #gamebackground option").attr("selected", "");
 	$("#game #gamecontent #gamebackground option[value="+game.image+"]").attr("selected", "selected");
+	updateBackgroundImage();
 
 });
 
 function updateBackgroundImage(){
 	var url = "img/games/"+game.image+".jpg";
-	$("body").css("background-image",url);
+	$("body").css("background","url('"+url+"')");
+	$("body").css("background-size","125%");
+	$("body").css("background-attachment","fixed");
+	localStorage.setItem("game", JSON.stringify(game));
 }
 
 function updateGame(){
